@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+
+	<element name="face">
+		<hitbox>
+			<polygon>146.0000, 49.0000, 19.0000, 48.0000, 13.0000, 3.0000, 151.0000, 2.0000</polygon>
+		</hitbox>
+	</element>
+	
+	<element name="droite">
+		<hitbox>
+			<polygon>151.0000, 3.0000, 144.0000, 44.0000, 37.0000, 44.0000, 31.0000, 4.0000</polygon>
+		</hitbox>
+	</element>
+
+</elements>
+

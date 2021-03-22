@@ -1,0 +1,75 @@
+bourru.png
+size: 1800, 245
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+droite-idle
+  rotate: false
+  xy: 0, 0
+  size: 180, 245
+  orig: 180, 245
+  offset: 0, 0
+  index: -1
+droite
+  rotate: false
+  xy: 180, 0
+  size: 180, 245
+  orig: 180, 245
+  offset: 0, 0
+  index: 0
+droite
+  rotate: false
+  xy: 360, 0
+  size: 180, 245
+  orig: 180, 245
+  offset: 0, 0
+  index: 1
+droite
+  rotate: false
+  xy: 540, 0
+  size: 180, 245
+  orig: 180, 245
+  offset: 0, 0
+  index: 2
+droite
+  rotate: false
+  xy: 720, 0
+  size: 180, 245
+  orig: 180, 245
+  offset: 0, 0
+  index: 3
+face-idle
+  rotate: false
+  xy: 900, 0
+  size: 180, 245
+  orig: 180, 245
+  offset: 0, 0
+  index: -1
+face
+  rotate: false
+  xy: 1080, 0
+  size: 180, 245
+  orig: 180, 245
+  offset: 0, 0
+  index: 0
+face
+  rotate: false
+  xy: 1260, 0
+  size: 180, 245
+  orig: 180, 245
+  offset: 0, 0
+  index: 1
+face
+  rotate: false
+  xy: 1440, 0
+  size: 180, 245
+  orig: 180, 245
+  offset: 0, 0
+  index: 2
+face
+  rotate: false
+  xy: 1620, 0
+  size: 180, 245
+  orig: 180, 245
+  offset: 0, 0
+  index: 3

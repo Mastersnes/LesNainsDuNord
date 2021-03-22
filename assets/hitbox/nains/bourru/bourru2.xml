@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- created with https://www.codeandweb.com/physicseditor -->
+<bodydef>
+
+	<body name="droite">
+		<is_dynamic/>
+		<linear_damping>0</linear_damping>
+		<angular_damping>0</angular_damping>
+		<allow_sleep/>
+		<fixture>
+			<density>2</density>
+			<friction>0</friction>
+			<restitution>0</restitution>
+			<filter_category_bits>1</filter_category_bits>
+			<filter_mask_bits>65535</filter_mask_bits>
+			<filter_group_index>0</filter_group_index>
+			<polygon>151.0000, 3.0000, 144.0000, 44.0000, 37.0000, 44.0000, 31.0000, 4.0000</polygon>
+		</fixture>
+	</body>
+	
+	<body name="face">
+		<is_dynamic/>
+		<linear_damping>0</linear_damping>
+		<angular_damping>0</angular_damping>
+		<allow_sleep/>
+		<fixture>
+			<density>2</density>
+			<friction>0</friction>
+			<restitution>0</restitution>
+			<filter_category_bits>1</filter_category_bits>
+			<filter_mask_bits>65535</filter_mask_bits>
+			<filter_group_index>0</filter_group_index>
+			<polygon>146.0000, 49.0000, 19.0000, 48.0000, 13.0000, 3.0000, 151.0000, 2.0000</polygon>
+		</fixture>
+	</body>
+
+	<metadata>
+		<format>1</format>
+		<ptm_ratio>32</ptm_ratio>
+	</metadata>
+
+</bodydef>
+
