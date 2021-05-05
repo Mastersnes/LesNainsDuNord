@@ -1,0 +1,33 @@
+chaines.png
+size: 709, 1784
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arriere_droite
+  rotate: false
+  xy: 0, 0
+  size: 630, 313
+  orig: 630, 313
+  offset: 0, 0
+  index: -1
+arriere_gauche
+  rotate: false
+  xy: 0, 313
+  size: 657, 339
+  orig: 657, 339
+  offset: 0, 0
+  index: -1
+avant_droite
+  rotate: false
+  xy: 0, 652
+  size: 709, 566
+  orig: 709, 566
+  offset: 0, 0
+  index: -1
+avant_gauche
+  rotate: false
+  xy: 0, 1218
+  size: 709, 566
+  orig: 709, 566
+  offset: 0, 0
+  index: -1

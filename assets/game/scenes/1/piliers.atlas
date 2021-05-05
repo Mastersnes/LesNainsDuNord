@@ -1,0 +1,19 @@
+piliers.png
+size: 602, 759
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+droite
+  rotate: false
+  xy: 0, 0
+  size: 433, 759
+  orig: 433, 759
+  offset: 0, 0
+  index: -1
+gauche
+  rotate: false
+  xy: 433, 0
+  size: 169, 636
+  orig: 169, 636
+  offset: 0, 0
+  index: -1

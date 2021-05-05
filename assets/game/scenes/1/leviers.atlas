@@ -1,0 +1,61 @@
+leviers.png
+size: 416, 241
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+levier_arriere_droite
+  rotate: false
+  xy: 0, 0
+  size: 38, 72
+  orig: 38, 72
+  offset: 0, 0
+  index: -1
+levier_arriere_gauche
+  rotate: false
+  xy: 38, 0
+  size: 38, 72
+  orig: 38, 72
+  offset: 0, 0
+  index: -1
+levier_avant_droite
+  rotate: false
+  xy: 76, 0
+  size: 48, 90
+  orig: 48, 90
+  offset: 0, 0
+  index: -1
+levier_avant_gauche
+  rotate: false
+  xy: 124, 0
+  size: 48, 90
+  orig: 48, 90
+  offset: 0, 0
+  index: -1
+roue_arriere_droite
+  rotate: false
+  xy: 172, 0
+  size: 123, 106
+  orig: 123, 106
+  offset: 0, 0
+  index: -1
+roue_arriere_gauche
+  rotate: false
+  xy: 295, 0
+  size: 121, 105
+  orig: 121, 105
+  offset: 0, 0
+  index: -1
+roue_avant_droite
+  rotate: false
+  xy: 0, 106
+  size: 184, 135
+  orig: 184, 135
+  offset: 0, 0
+  index: -1
+roue_avant_gauche
+  rotate: false
+  xy: 184, 106
+  size: 153, 131
+  orig: 153, 131
+  offset: 0, 0
+  index: -1

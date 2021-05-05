@@ -1,0 +1,131 @@
+bourru.png
+size: 1880, 490
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dos
+  rotate: false
+  xy: 0, 0
+  size: 210, 245
+  orig: 210, 245
+  offset: 0, 0
+  index: 0
+dos
+  rotate: false
+  xy: 210, 0
+  size: 210, 245
+  orig: 210, 245
+  offset: 0, 0
+  index: 1
+dos
+  rotate: false
+  xy: 420, 0
+  size: 210, 245
+  orig: 210, 245
+  offset: 0, 0
+  index: 2
+dos
+  rotate: false
+  xy: 630, 0
+  size: 210, 245
+  orig: 210, 245
+  offset: 0, 0
+  index: 3
+droite-idle
+  rotate: false
+  xy: 840, 0
+  size: 180, 245
+  orig: 180, 245
+  offset: 0, 0
+  index: -1
+droite
+  rotate: false
+  xy: 1020, 0
+  size: 210, 245
+  orig: 210, 245
+  offset: 0, 0
+  index: 0
+droite
+  rotate: false
+  xy: 1230, 0
+  size: 210, 245
+  orig: 210, 245
+  offset: 0, 0
+  index: 1
+droite
+  rotate: false
+  xy: 1440, 0
+  size: 210, 245
+  orig: 210, 245
+  offset: 0, 0
+  index: 2
+droite
+  rotate: false
+  xy: 1650, 0
+  size: 210, 245
+  orig: 210, 245
+  offset: 0, 0
+  index: 3
+face-idle
+  rotate: false
+  xy: 0, 245
+  size: 200, 245
+  orig: 200, 245
+  offset: 0, 0
+  index: -1
+face
+  rotate: false
+  xy: 200, 245
+  size: 210, 245
+  orig: 210, 245
+  offset: 0, 0
+  index: 0
+face
+  rotate: false
+  xy: 410, 245
+  size: 210, 245
+  orig: 210, 245
+  offset: 0, 0
+  index: 1
+face
+  rotate: false
+  xy: 620, 245
+  size: 210, 245
+  orig: 210, 245
+  offset: 0, 0
+  index: 2
+face
+  rotate: false
+  xy: 830, 245
+  size: 210, 245
+  orig: 210, 245
+  offset: 0, 0
+  index: 3
+gauche
+  rotate: false
+  xy: 1040, 245
+  size: 210, 245
+  orig: 210, 245
+  offset: 0, 0
+  index: 0
+gauche
+  rotate: false
+  xy: 1250, 245
+  size: 210, 245
+  orig: 210, 245
+  offset: 0, 0
+  index: 1
+gauche
+  rotate: false
+  xy: 1460, 245
+  size: 210, 245
+  orig: 210, 245
+  offset: 0, 0
+  index: 2
+gauche
+  rotate: false
+  xy: 1670, 245
+  size: 210, 245
+  orig: 210, 245
+  offset: 0, 0
+  index: 3
