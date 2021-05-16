@@ -11,11 +11,27 @@ public class NainsAssets {
 
         public static AnimationTemplate FACE_IDLE = new AnimationTemplate(ATLAS.get().findRegion("face-idle"));
 
-        public static AnimationTemplate DOS_ANIM = new AnimationTemplate(1 / 6f, ATLAS.get().findRegions("dos"), Animation.PlayMode.LOOP);
-        public static AnimationTemplate FACE_ANIM = new AnimationTemplate(1 / 6f, ATLAS.get().findRegions("face"), Animation.PlayMode.LOOP);
-        public static AnimationTemplate DROITE_ANIM = new AnimationTemplate(1 / 6f, ATLAS.get().findRegions("droite"), Animation.PlayMode.LOOP);
-        public static AnimationTemplate GAUCHE_ANIM = new AnimationTemplate(1 / 6f, ATLAS.get().findRegions("gauche"), Animation.PlayMode.LOOP);
+        /**
+         * 30 images par seconde
+         * 4 temps par image
+         * donc 4/30 secondes pour 1 image
+         */
+        public static AnimationTemplate DOS_ANIM = new AnimationTemplate(4 / 30f, ATLAS.get().findRegions("dos"), Animation.PlayMode.LOOP);
+        public static AnimationTemplate FACE_ANIM = new AnimationTemplate(4 / 30f, ATLAS.get().findRegions("face"), Animation.PlayMode.LOOP);
+        public static AnimationTemplate DROITE_ANIM = new AnimationTemplate(4 / 30f, ATLAS.get().findRegions("droite"), Animation.PlayMode.LOOP);
+        public static AnimationTemplate GAUCHE_ANIM = new AnimationTemplate(4 / 30f, ATLAS.get().findRegions("gauche"), Animation.PlayMode.LOOP);
+    }
 
-        public static PhysicsAsset PHYSICS = new PhysicsAsset("game/nains/bourru/bourru.xml");
+    public static class Petit {
+        public static AtlasAsset ATLAS = new AtlasAsset("game/nains/petit/petit.atlas");
+
+        public static AnimationTemplate FACE_IDLE = new AnimationTemplate(ATLAS.get().findRegion("face-idle"));
+
+        /**
+         * 30 images par seconde
+         * 4 temps par image
+         * donc 4/30 secondes pour 1 image
+         */
+        public static AnimationTemplate FACE_ANIM = new AnimationTemplate(4 / 30f, ATLAS.get().findRegions("face"), Animation.PlayMode.LOOP);
     }
 }

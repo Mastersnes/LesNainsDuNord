@@ -9,7 +9,6 @@ import com.bebel.api.resources.assets.TextureAsset;
  */
 public class Scene1Assets {
     public static TextureAsset BACKGROUND = new TextureAsset("game/scenes/1/background.jpg");
-    public static PhysicsAsset PHYSICS = new PhysicsAsset("game/scenes/1/scene1.xml");
 
     public static class Pont {
         public static AtlasAsset ATLAS = new AtlasAsset("game/scenes/1/pont.atlas");

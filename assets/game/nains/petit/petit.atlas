@@ -1,0 +1,19 @@
+petit.png
+size: 368, 230
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+face-idle
+  rotate: false
+  xy: 0, 0
+  size: 184, 230
+  orig: 184, 230
+  offset: 0, 0
+  index: -1
+face
+  rotate: false
+  xy: 184, 0
+  size: 184, 230
+  orig: 184, 230
+  offset: 0, 0
+  index: -1
