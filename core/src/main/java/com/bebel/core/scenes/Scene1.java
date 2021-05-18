@@ -2,19 +2,19 @@ package com.bebel.core.scenes;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.Vector2;
 import com.bebel.api.Global;
-import com.bebel.api.actions.ActionManager;
-import com.bebel.api.elements.basique.predicats.MovableElement;
 import com.bebel.api.elements.complex.BebelScene;
 import com.bebel.api.elements.complex.Personnage;
 import com.bebel.core.elements.Jalon;
 import com.bebel.core.resources.NainsAssets;
 import com.bebel.core.resources.Scene1Assets;
 
+import static com.bebel.api.actions.ActionManager.newSequence;
+import static com.bebel.api.actions.ActionManager.walk;
+
 public class Scene1 extends BebelScene {
-    protected Personnage bourru, petit;
+    protected Personnage selected, bourru, petit;
     protected Jalon jalons;
 
     public Scene1() {
@@ -27,12 +27,12 @@ public class Scene1 extends BebelScene {
         Gdx.graphics.setWindowedMode(800, 600);
 
         activeProfondeur(0.02f, 0.27f);
-        activeJalon(78f, 28.5f)
-            .down(80f, 16f).down()
-            .left(46f, 17.5f).left()
-            .left(14.5f, 17f).left()
-            .up(24f, 27f);
         sortByY();
+//        activeJalon(78f, 28.5f)
+//            .down(80f, 16f).down()
+//            .left(46f, 17.5f).left()
+//            .left(14.5f, 17f).left()
+//            .up(24f, 27f);
 
         background(Scene1Assets.BACKGROUND);
 
@@ -79,7 +79,6 @@ public class Scene1 extends BebelScene {
             .right(NainsAssets.Bourru.DROITE_ANIM, NainsAssets.Bourru.FACE_IDLE)
             .left(NainsAssets.Bourru.GAUCHE_ANIM, NainsAssets.Bourru.FACE_IDLE)
             .speed(17.5f)
-            .activeClavier()
             .activeZ()
             .size(200 * Global.scale, 245 * Global.scale)
             .position(923 * Global.scale, 563 * Global.scale)
@@ -88,6 +87,7 @@ public class Scene1 extends BebelScene {
         petit = (Personnage) add(new Personnage("Petit"))
                 .down(NainsAssets.Petit.FACE_ANIM, NainsAssets.Petit.FACE_IDLE)
                 .speed(17.5f)
+                .activeClavier()
                 .activeZ()
                 .size(184 * Global.scale, 230 * Global.scale)
                 .position(923 * Global.scale, 563 * Global.scale)
@@ -142,35 +142,31 @@ public class Scene1 extends BebelScene {
                 if (Gdx.graphics.isFullscreen()) Gdx.graphics.setWindowedMode(800, 600);
                 else Gdx.graphics.setFullscreenMode(Global.displayModes.get(0));
             }
-
-            if (k.is(Input.Keys.UP)) bourru.speed(bourru.speed()-0.1f);
-            if (k.is(Input.Keys.DOWN)) bourru.speed(bourru.speed()+0.1f);
-
-            if (k.containsOneOf(Input.Keys.UP, Input.Keys.DOWN)) Gdx.app.log("SPEED", bourru.speed()+"");
         });
 
-        parent.onClick(mouse -> {
-            final Vector2 mousePosition = new Vector2(mouse.x(), mouse.y());
-            final Vector2 nainPosition = new Vector2(bourru.x(), bourru.y());
-            final Vector2 mouseJalon = closestJalon(mousePosition, nainPosition);
+        bourru.onClick(mouse -> {
+            Gdx.app.log("BOURRU", "CLICK, mouseLeft : " + mouse.isLeft());
+            if (mouse.isLeft()) selected = bourru;
+        });
+        petit.onClick(mouse -> {
+            Gdx.app.log("PETIT", "CLICK, mouseLeft : " + mouse.isLeft());
+            if (mouse.isLeft()) selected = petit;
+        });
 
-            final float dist = nainPosition.dst(mousePosition);
-            Gdx.app.log("DIST", dist + "");
-            ActionManager.newSequence(
-                ActionManager.move(bourru).to(mousePosition.x, mousePosition.y, R_DOWN | R_LEFT, dist / bourru.speed(), Interpolation.linear)
-            );
+        onClick(mouse -> {
+            Gdx.app.log("MAP", "CLICK, selected : " + selected + ", mouseRight : " + mouse.isRight());
+            if (mouse.isRight() && selected != null) {
+                selected.stop();
+                final Vector2 mousePosition = new Vector2(mouse.x(), mouse.y());
+                newSequence(
+                        walk(selected).to(mousePosition.x, mousePosition.y)
+                );
+            }
         });
     }
 
     public Jalon activeJalon(final float x, final float y) {
         this.jalons = new Jalon(x, y);
         return jalons;
-    }
-    public Vector2 closestJalon(final Vector2 source, final Vector2 reference) {
-        return null;
-    }
-
-    public void setOn(final MovableElement element, final Jalon jalon) {
-
     }
 }

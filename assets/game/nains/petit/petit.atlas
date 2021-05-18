@@ -1,5 +1,5 @@
 petit.png
-size: 368, 230
+size: 920, 230
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
@@ -16,4 +16,25 @@ face
   size: 184, 230
   orig: 184, 230
   offset: 0, 0
-  index: -1
+  index: 0
+face
+  rotate: false
+  xy: 368, 0
+  size: 184, 230
+  orig: 184, 230
+  offset: 0, 0
+  index: 1
+face
+  rotate: false
+  xy: 552, 0
+  size: 184, 230
+  orig: 184, 230
+  offset: 0, 0
+  index: 2
+face
+  rotate: false
+  xy: 736, 0
+  size: 184, 230
+  orig: 184, 230
+  offset: 0, 0
+  index: 3
