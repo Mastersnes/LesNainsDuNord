@@ -2,20 +2,24 @@ package com.bebel.core.scenes;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.bebel.api.Global;
+import com.bebel.api.actions.ActionManager;
+import com.bebel.api.actions.organisation.SequenceAction;
 import com.bebel.api.elements.complex.BebelScene;
 import com.bebel.api.elements.complex.Personnage;
-import com.bebel.core.elements.Jalon;
+import com.bebel.api.utils.Jalon;
+import com.bebel.api.utils.Path;
 import com.bebel.core.resources.NainsAssets;
 import com.bebel.core.resources.Scene1Assets;
 
-import static com.bebel.api.actions.ActionManager.newSequence;
-import static com.bebel.api.actions.ActionManager.walk;
+import static com.bebel.api.actions.ActionManager.*;
 
 public class Scene1 extends BebelScene {
     protected Personnage selected, bourru, petit;
-    protected Jalon jalons;
 
     public Scene1() {
         super("Premiere Scene - Pont");
@@ -24,15 +28,17 @@ public class Scene1 extends BebelScene {
     @Override
     protected void createImpl() {
         super.createImpl();
-        Gdx.graphics.setWindowedMode(800, 600);
 
         activeProfondeur(0.02f, 0.27f);
         sortByY();
-//        activeJalon(78f, 28.5f)
-//            .down(80f, 16f).down()
-//            .left(46f, 17.5f).left()
-//            .left(14.5f, 17f).left()
-//            .up(24f, 27f);
+
+        activeJalon(87f, 22f)
+            .down(88f, 11.5f).down()
+            .left(65f, 13f).left()
+            .left(45f, 13.5f).left()
+            .left(25.5f, 13f).left()
+            .left(5f, 12f).left()
+            .up(5f, 20f);
 
         background(Scene1Assets.BACKGROUND);
 
@@ -91,7 +97,7 @@ public class Scene1 extends BebelScene {
                 .activeZ()
                 .size(184 * Global.scale, 230 * Global.scale)
                 .position(923 * Global.scale, 563 * Global.scale)
-                .setDynamic();
+                .setDynamic().hide();
 
         /**
          * Chaines
@@ -132,6 +138,22 @@ public class Scene1 extends BebelScene {
     }
 
     @Override
+    protected void paintImpl(SpriteBatch batch) {
+        super.paintImpl(batch);
+        for (final Jalon jalon : rootJalon.listAll()) {
+            batch.end();
+            final ShapeRenderer shape = Global.shape;
+            shape.setProjectionMatrix(batch.getProjectionMatrix());
+            shape.setTransformMatrix(batch.getTransformMatrix());
+            shape.setColor(Color.RED.cpy());
+            shape.begin(ShapeRenderer.ShapeType.Line);
+            shape.rect(jalon.x() - 2, jalon.y() - 2, 2, 2);
+            shape.end();
+            batch.begin();
+        }
+    }
+
+    @Override
     protected void makeEvents() {
         super.makeEvents();
 
@@ -145,28 +167,35 @@ public class Scene1 extends BebelScene {
         });
 
         bourru.onClick(mouse -> {
-            Gdx.app.log("BOURRU", "CLICK, mouseLeft : " + mouse.isLeft());
+            Gdx.app.log("SELECT", "BOURRU");
             if (mouse.isLeft()) selected = bourru;
         });
         petit.onClick(mouse -> {
-            Gdx.app.log("PETIT", "CLICK, mouseLeft : " + mouse.isLeft());
+            Gdx.app.log("SELECT", "PETIT");
             if (mouse.isLeft()) selected = petit;
         });
 
         onClick(mouse -> {
-            Gdx.app.log("MAP", "CLICK, selected : " + selected + ", mouseRight : " + mouse.isRight());
+            Gdx.app.log("DESTINATION", mouse.x() + ", " + mouse.y());
             if (mouse.isRight() && selected != null) {
                 selected.stop();
                 final Vector2 mousePosition = new Vector2(mouse.x(), mouse.y());
-                newSequence(
-                        walk(selected).to(mousePosition.x, mousePosition.y)
-                );
+                final Vector2 nainPosition = new Vector2(selected.x(), selected.y());
+
+                final Jalon firstJalon = closestJalon(nainPosition);
+                final Jalon lastJalon = closestJalon(mousePosition);
+                final Path path = firstJalon.findBestPath(lastJalon);
+
+                final SequenceAction sequence = ActionManager.sequence();
+                sequence.add(run(() -> selected.startLog()));
+                for (final Jalon jalon : path) {
+                    sequence.add(walk(selected).to(jalon.x, jalon.y));
+                }
+                sequence.add(walk(selected).to(mousePosition.x, mousePosition.y));
+                sequence.add(run(() -> selected.endLog()));
+
+                newSequence(sequence);
             }
         });
-    }
-
-    public Jalon activeJalon(final float x, final float y) {
-        this.jalons = new Jalon(x, y);
-        return jalons;
     }
 }
