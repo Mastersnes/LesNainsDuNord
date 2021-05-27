@@ -32,13 +32,13 @@ public class Scene1 extends BebelScene {
         activeProfondeur(0.02f, 0.27f);
         sortByY();
 
-        activeJalon(87f, 22f)
-            .down(88f, 11.5f).down()
-            .left(65f, 13f).left()
-            .left(45f, 13.5f).left()
-            .left(25.5f, 13f).left()
-            .left(5f, 12f).left()
-            .up(5f, 20f);
+        activeJalon("G", 87f, 22f)
+            .down("F", 88f, 13f).down()
+            .left("E", 65f, 13f).left()
+            .left("D", 45f, 13f).left()
+            .left("C", 25.5f, 13f).left()
+            .left("B", 5f, 13f).left()
+            .up("A", 5f, 20f);
 
         background(Scene1Assets.BACKGROUND);
 
@@ -92,12 +92,14 @@ public class Scene1 extends BebelScene {
 
         petit = (Personnage) add(new Personnage("Petit"))
                 .down(NainsAssets.Petit.FACE_ANIM, NainsAssets.Petit.FACE_IDLE)
+                .left(NainsAssets.Petit.GAUCHE_ANIM, NainsAssets.Petit.FACE_IDLE)
+                .right(NainsAssets.Petit.DROITE_ANIM, NainsAssets.Petit.FACE_IDLE)
                 .speed(17.5f)
                 .activeClavier()
                 .activeZ()
                 .size(184 * Global.scale, 230 * Global.scale)
                 .position(923 * Global.scale, 563 * Global.scale)
-                .setDynamic().hide();
+                .setDynamic();
 
         /**
          * Chaines
@@ -187,12 +189,12 @@ public class Scene1 extends BebelScene {
                 final Path path = firstJalon.findBestPath(lastJalon);
 
                 final SequenceAction sequence = ActionManager.sequence();
-                sequence.add(run(() -> selected.startLog()));
                 for (final Jalon jalon : path) {
                     sequence.add(walk(selected).to(jalon.x, jalon.y));
                 }
-                sequence.add(walk(selected).to(mousePosition.x, mousePosition.y));
-                sequence.add(run(() -> selected.endLog()));
+//                sequence.add(walk(selected).to(mousePosition.x, mousePosition.y));
+
+                Gdx.app.log("PATH", sequence.toString());
 
                 newSequence(sequence);
             }

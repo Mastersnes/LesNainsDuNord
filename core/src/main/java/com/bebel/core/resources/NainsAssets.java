@@ -33,5 +33,7 @@ public class NainsAssets {
          * donc 4/30 secondes pour 1 image
          */
         public static AnimationTemplate FACE_ANIM = new AnimationTemplate(4 / 30f, ATLAS.get().findRegions("face"), Animation.PlayMode.LOOP);
+        public static AnimationTemplate DROITE_ANIM = new AnimationTemplate(4 / 30f, ATLAS.get().findRegions("droite"), Animation.PlayMode.LOOP);
+        public static AnimationTemplate GAUCHE_ANIM = new AnimationTemplate(DROITE_ANIM).flipX();
     }
 }
