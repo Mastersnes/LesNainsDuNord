@@ -91,15 +91,16 @@ public class Scene1 extends BebelScene {
             .setDynamic();
 
         petit = (Personnage) add(new Personnage("Petit"))
-                .down(NainsAssets.Petit.FACE_ANIM, NainsAssets.Petit.FACE_IDLE)
-                .left(NainsAssets.Petit.GAUCHE_ANIM, NainsAssets.Petit.FACE_IDLE)
-                .right(NainsAssets.Petit.DROITE_ANIM, NainsAssets.Petit.FACE_IDLE)
-                .speed(17.5f)
-                .activeClavier()
-                .activeZ()
-                .size(184 * Global.scale, 230 * Global.scale)
-                .position(923 * Global.scale, 563 * Global.scale)
-                .setDynamic();
+            .up(NainsAssets.Petit.DOS_ANIM, NainsAssets.Petit.FACE_IDLE)
+            .down(NainsAssets.Petit.FACE_ANIM, NainsAssets.Petit.FACE_IDLE)
+            .left(NainsAssets.Petit.GAUCHE_ANIM, NainsAssets.Petit.FACE_IDLE)
+            .right(NainsAssets.Petit.DROITE_ANIM, NainsAssets.Petit.FACE_IDLE)
+            .speed(17.5f)
+            .activeClavier()
+            .activeZ()
+            .size(184 * Global.scale, 230 * Global.scale)
+            .position(923 * Global.scale, 563 * Global.scale)
+            .setDynamic();
 
         /**
          * Chaines
@@ -142,17 +143,17 @@ public class Scene1 extends BebelScene {
     @Override
     protected void paintImpl(SpriteBatch batch) {
         super.paintImpl(batch);
-        for (final Jalon jalon : rootJalon.listAll()) {
-            batch.end();
-            final ShapeRenderer shape = Global.shape;
-            shape.setProjectionMatrix(batch.getProjectionMatrix());
-            shape.setTransformMatrix(batch.getTransformMatrix());
-            shape.setColor(Color.RED.cpy());
-            shape.begin(ShapeRenderer.ShapeType.Line);
-            shape.rect(jalon.x() - 2, jalon.y() - 2, 2, 2);
-            shape.end();
-            batch.begin();
-        }
+//        for (final Jalon jalon : rootJalon.listAll()) {
+//            batch.end();
+//            final ShapeRenderer shape = Global.shape;
+//            shape.setProjectionMatrix(batch.getProjectionMatrix());
+//            shape.setTransformMatrix(batch.getTransformMatrix());
+//            shape.setColor(Color.RED.cpy());
+//            shape.begin(ShapeRenderer.ShapeType.Line);
+//            shape.rect(jalon.x() - 2, jalon.y() - 2, 2, 2);
+//            shape.end();
+//            batch.begin();
+//        }
     }
 
     @Override

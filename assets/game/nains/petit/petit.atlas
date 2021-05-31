@@ -1,67 +1,102 @@
 petit.png
-size: 1656, 230
+size: 368, 1610
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-droite
+dos
   rotate: false
   xy: 0, 0
   size: 184, 230
   orig: 184, 230
   offset: 0, 0
   index: 0
-droite
+dos
   rotate: false
   xy: 184, 0
   size: 184, 230
   orig: 184, 230
   offset: 0, 0
   index: 1
+dos
+  rotate: false
+  xy: 0, 230
+  size: 184, 230
+  orig: 184, 230
+  offset: 0, 0
+  index: 2
+dos
+  rotate: false
+  xy: 184, 230
+  size: 184, 230
+  orig: 184, 230
+  offset: 0, 0
+  index: 3
+droite-idle
+  rotate: false
+  xy: 0, 460
+  size: 184, 230
+  orig: 184, 230
+  offset: 0, 0
+  index: -1
 droite
   rotate: false
-  xy: 368, 0
+  xy: 184, 460
+  size: 184, 230
+  orig: 184, 230
+  offset: 0, 0
+  index: 0
+droite
+  rotate: false
+  xy: 0, 690
+  size: 184, 230
+  orig: 184, 230
+  offset: 0, 0
+  index: 1
+droite
+  rotate: false
+  xy: 184, 690
   size: 184, 230
   orig: 184, 230
   offset: 0, 0
   index: 2
 droite
   rotate: false
-  xy: 552, 0
+  xy: 0, 920
   size: 184, 230
   orig: 184, 230
   offset: 0, 0
   index: 3
 face-idle
   rotate: false
-  xy: 736, 0
+  xy: 184, 920
   size: 184, 230
   orig: 184, 230
   offset: 0, 0
   index: -1
 face
   rotate: false
-  xy: 920, 0
+  xy: 0, 1150
   size: 184, 230
   orig: 184, 230
   offset: 0, 0
   index: 0
 face
   rotate: false
-  xy: 1104, 0
+  xy: 184, 1150
   size: 184, 230
   orig: 184, 230
   offset: 0, 0
   index: 1
 face
   rotate: false
-  xy: 1288, 0
+  xy: 0, 1380
   size: 184, 230
   orig: 184, 230
   offset: 0, 0
   index: 2
 face
   rotate: false
-  xy: 1472, 0
+  xy: 184, 1380
   size: 184, 230
   orig: 184, 230
   offset: 0, 0
